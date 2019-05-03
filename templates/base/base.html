@@ -1,7 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'refugio/css/bootstrap.min.css' %}">
+    {% block css %}
+    {% endblock %}
     <title>{% block title %}Title {% endblock %}</title>
 </head>
 <body>
@@ -9,12 +13,62 @@
     {% endblock %}
 
     {% block nav %}
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Refugio</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav  mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="mascotaMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Mascota
+                </a>
+                <div class="dropdown-menu" aria-labelledby="mascotaMenuLink">
+                  <a class="dropdown-item" href="#">Registrar</a>
+                  <a class="dropdown-item" href="#">Listar</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="adopcionesMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Adopciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="adopcionesMenuLink">
+                  <a class="dropdown-item" href="#">Solicitar</a>
+                  <a class="dropdown-item" href="#">Listar solicitudes</a>
+                </div>
+              </li>
+            </ul>
+            <ul class="navbar-nav mt-2 pr-5 my-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">WebWeaver </a>
+                </li>
+                <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="opcionesMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Opciones
+                </a>
+                <div class="dropdown-menu " aria-labelledby="opcionesMenuLink ">
+                  <a class="dropdown-item" href="#">Salir</a>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+        </nav>
     {% endblock %}
 
     {% block content %}
     {% endblock %}
 
     {% block footer %}
+    {% endblock %}
+
+    <script src="{% static 'refugio/js/jquery-3.min.js' %} "></script>
+    <script src="{% static 'refugio/js/bootstrap.min.js' %} "></script>
+    {% block js %}
     {% endblock %}
 </body>
 </html>
