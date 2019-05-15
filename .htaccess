@@ -1,0 +1,7 @@
+# htaccess for wsgi
+SetHandler wsgi-script
+
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !(django.wsgi)
+RewriteRule ^(.*)$ django.wsgi/$1 [L]
