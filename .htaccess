@@ -1,0 +1,2 @@
+SetHandler wsgi-script
+DirectoryIndex index.py
