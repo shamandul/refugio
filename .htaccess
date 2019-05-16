@@ -3,5 +3,5 @@ SetHandler wsgi-script
 
 RewriteEngine On
 RewriteBase /
-RewriteCond %{REQUEST_URI} !(wsgi.py)
+RewriteCond %{REQUEST_URI} !(refugio/wsgi.py)
 RewriteRule ^(.*)$ wsgi.py/$1 [L]
