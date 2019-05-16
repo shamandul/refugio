@@ -4,4 +4,4 @@ SetHandler wsgi-script
 RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_URI} !(django.wsgi)
-RewriteRule ^(.*)$ django.wsgi/$1 [L]
+RewriteRule ^(.*)$ wsgi.py/$1 [L]
